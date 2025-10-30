@@ -1,6 +1,4 @@
-#!/usr/bin/python3
-"""
-Script that fetches and displays TODO list progress for a given employee ID
+cript that fetches and displays TODO list progress for a given employee ID
 using the JSONPlaceholder REST API.
 """
 
@@ -12,7 +10,9 @@ def get_employee_todo_progress(employee_id):
     """Fetch and display TODO progress for a given employee ID."""
 
     # Get employee information
-    user_url = "https://jsonplaceholder.typicode.com/users/{}".format(employee_id)
+    user_url = (
+        "https://jsonplaceholder.typicode.com/users/{}".format(employee_id)
+    )
     user_response = requests.get(user_url)
     user_data = user_response.json()
 
@@ -24,7 +24,11 @@ def get_employee_todo_progress(employee_id):
     employee_name = user_data.get("name")
 
     # Get employee's todos
-    todos_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(employee_id)
+    todos_url = (
+        "https://jsonplaceholder.typicode.com/users/{}/todos".format(
+            employee_id
+        )
+    )
     todos_response = requests.get(todos_url)
     todos = todos_response.json()
 
