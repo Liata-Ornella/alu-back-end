@@ -60,4 +60,3 @@ if __name__ == "__main__":
         get_employee_todo_progress(emp_id)
     except ValueError:
         print("Employee ID must be an integer.")
-
